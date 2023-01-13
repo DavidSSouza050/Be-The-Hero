@@ -1,4 +1,4 @@
-
+/*Usando o knex para criar o banco relacionados a ong */
 exports.up = function(knex) {
    return knex.schema.createTable('ongs', function (table) {
         table.string('id').primary();
@@ -10,7 +10,7 @@ exports.up = function(knex) {
     });
 };
 
-
+/*deletando a tabela criada caso de algum erro */
 exports.down = function(knex) {
     return knex.schema.dropTable('ongs'); 
 };

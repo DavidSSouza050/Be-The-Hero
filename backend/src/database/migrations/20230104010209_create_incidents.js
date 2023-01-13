@@ -1,4 +1,4 @@
-
+/*Criando a tabela de incidents e realazionando com a tabela ongs */
 exports.up = function(knex) {
     return knex.schema.createTable('incidents', function (table) {
         table.increments();
@@ -11,7 +11,7 @@ exports.up = function(knex) {
         table.foreign('ong_id').references('id').inTable('ongs');
     });
 };
-
+/*deletando a tabela ongs caso seja necessário */
 exports.down = function(knex) {
     return knex.schema.dropTable('incidents');
 };
